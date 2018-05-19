@@ -1,0 +1,153 @@
+/**
+ * 预存保单费
+ */
+
+@import "../../base/fn";
+.radius(@radius: 4/@w2) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+}
+
+.active-box {
+  min-height: 100%;
+  background: #d84242;
+  padding-bottom: 40/@w2;
+}
+
+.dos-bg {
+  position: relative;
+  background-color: #B73433;
+}
+
+.imgauto {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto
+}
+
+.dos-imgauto {
+  margin-bottom: 30/@w2;
+}
+
+.btn-fde100-shadow {
+  .radius();
+  width: 300/@w2;
+  height: 72/@w2;
+  line-height: 72/@w2;
+  font-size: 30/@w2;
+  box-shadow: 0 4/@w2 0 0 #a5270f;
+  background: #fde100;
+  display: block;
+  color: #541313;
+  text-align: center;
+  margin: 30/@w2 auto 40/@w2;
+  &:active {
+    background: #ecb306;
+  }
+}
+
+.dos-btn {
+  color: #fff;
+  // background-color: #FE8D05;
+  background: -webkit-linear-gradient(left, #FE9406, #FC6A03);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right, #FE9406, #FC6A03);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #FE9406, #FC6A03);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #FE9406, #FC6A03);
+  box-shadow: none;
+  border-radius: 36/@w2;
+  position: absolute;
+  top: 600/@w2;
+  left: 0;
+  right: 0;
+  &.active {
+    background: -webkit-linear-gradient(left, #FDB451, #FC8D3E);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #FDB451, #FC8D3E);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #FDB451, #FC8D3E);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #FDB451, #FC8D3E);
+    /* 标准的语法 */
+  }
+}
+
+.prestore-rule {
+  padding: 0 30/@w2;
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 54/@w2;
+    top: -12/@w2;
+    width: 184/@w2;
+    height: 38/@w2;
+    background: url(../../images/active3.png) no-repeat;
+    content: "";
+    z-index: 12;
+    background-size: 100% 100%;
+  }
+}
+
+.prestore-rule .prestore-img {
+  .radius(8/@w2);
+  overflow: hidden;
+  padding-bottom: 24/@w2;
+  position: relative;
+  background: #fff;
+}
+
+.prestore-con {
+  padding: 0 52/@w2;
+  position: relative;
+  z-index: 11;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../../images/active2.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 806/@w2;
+    content: "";
+  }
+}
+
+.prestore-con ul {
+  padding: 58/@w2 0 24/@w2;
+  position: relative;
+  z-index: 12;
+}
+
+.prestore-con li {
+  line-height: 40/@w2;
+}
+
+.vouchers {
+  margin-bottom: 16/@w2;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 0px 1px 2px #efefef;
+  background: #fff url(../../images/prestore_bg.png) no-repeat top right;
+  background-size: 35%;
+  border-bottom: 8/@w2 solid #5890ff;
+  height: 130/@w2;
+  line-height: 130/@w2;
+  .radius(8/@w2);
+  .value {
+    color: #5890ff;
+  }
+}
+
+.coupon {
+  padding: 0 30/@w2;
+  .fs28 {
+    font-size: 56/@w2;
+  }
+}
+

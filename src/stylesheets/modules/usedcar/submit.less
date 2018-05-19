@@ -1,0 +1,76 @@
+/* 二手车登记 */
+
+@import "../../base/fn";
+.car_model_dialog {
+  .weui_cell_bd.weui_cell_primary {
+    text-align: left;
+    line-height: 1.5;
+  }
+  .weui_cells_radio .weui_cell_ft {
+    width: 30/@w2;
+    padding-left: 0;
+  }
+  .weui_dialog{
+    overflow: auto;
+    max-height:50%;
+  }
+}
+.usedcar-sure-btn {
+  background-color: #fff;
+  font-size: 26/@w2;
+  padding: 7/@w2 20/@w2;
+  color: #0099ff;
+  border: 1px solid #0099ff;
+  border-radius: 8/@w2;
+}
+.usedcar-brand-info {
+  .weui_cell_primary{ width: 180/@w2; padding-right: 10/@w2;flex: none;} // vux更新最新框架后可删除样式
+  .weui_cell_ft{line-height: 1.5; flex: 1;}
+  //.usedcar-brand {
+  //  font-size: 30/@w2;
+  //  line-height: 1.6;
+  //}
+  //.usedcar-model {
+  //  line-height: 1.6;
+  //  font-size: 26/@w2;
+  //}
+}
+
+.no-car {
+  height: 120/@w2;
+  line-height: 120/@w2;
+  border-top: 1px solid #EDEDEE;
+  border-bottom: 1px solid #EDEDEE;
+  text-align: center;
+}
+
+.text-black-pro {
+  .vux-cell-primary, .vux-popup-picker-value {
+    color: #000;
+  }
+}
+
+.address-before {
+  position: relative;
+}
+
+.address-before:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  left: 30/@w2;
+}
+
+.owner-info .verifyCode {
+  position: absolute;
+  top: 135/@w2;
+}
+
+

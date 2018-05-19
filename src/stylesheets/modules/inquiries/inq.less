@@ -1,0 +1,233 @@
+/**
+ * 个人中心 -- 续保询价
+ */
+@import "../../base/fn";
+.insures-art{
+  .title-bar{
+    font-size: 26/@w2;
+    line-height: 60/@w2;
+    padding-top: 30/@w2;
+    color: #000;
+    opacity: 0.7;
+    text-indent: 30/@w2;
+  }
+  .weui_cell_select{  padding:0;}
+  .list-ins-li .mlr10{
+    margin: 0 10/@w2;
+  }
+  .list-ins-li .inq-title{
+    margin-right: 10/@w2;
+  }
+  .list-ins-li .ins-select-box:before {
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 40%;
+    content: "";
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    width: 0;
+    border-top: 8/@w2 solid transparent;
+    border-bottom: 8/@w2 solid transparent;
+    border-left: 8/@w2 solid #8e8e93;
+    z-index: 500;
+  }
+  .weui_cell_select .weui_cell_bd:after{ display: none;}
+  .ins-select-box .weui_select {
+    min-width: 80/@w2;
+    padding:0 25/@w2 0 6/@w2;
+    -webkit-border-radius: 8/@w2;
+    -moz-border-radius: 8/@w2;
+    border-radius: 8/@w2;
+    -ms-border-radius: 8/@w2;
+    -o-border-radius: 8/@w2;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #f5f5f5;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#fdfdfd),to(#f3f3f3));
+    height: 50/@w2;
+    border: 1px solid #e7e7e9;
+    line-height: inherit;
+    width: auto;
+  }
+  // .icon-blue-hook {
+  //   position: absolute;
+  //   width: 32/@w2;
+  //   height: 16/@w2;
+  //   border-color: #5890ff #5890ff transparent transparent;
+  //   border-width: 2/@w2;
+  //   -webkit-transform: rotate(135deg);
+  //   transform: rotate(135deg);
+  //   margin-top: -16/@w2;
+  // }
+  .iconTriangleDown,.iconTriangleUp {
+    position: absolute;
+    right: 37.5/@w2;
+    top: 50%;
+    margin-top: -10/@w2;
+    width: 0;
+    height: 0;
+    border-top: 12/@w2 solid transparent;
+    border-bottom: 12/@w2 solid transparent;
+    border-left: 12/@w2 solid #e7e7e9;
+  }
+  .iconTriangleUp {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg)
+  }
+  .iconTriangleDown {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg)
+  }
+
+  .list-ins-li .ins-select-box:before,.prestore-con:before,.prestore-rule:before {
+    content: ""
+  }
+
+  .ico-arrow-up {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg)
+  }
+
+  .form-input-time .ico-arrow-up {
+    position: absolute;
+    right: 6/@w2;
+    top: 50%;
+    margin-top: -16/@w2;
+  }
+  .tip-filter-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  }
+
+  .tip-filter-box {
+    z-index: 1000;
+    border-radius: 16/@w2;
+    background: #fff;
+    padding: 16/@w2 0;
+    width: 84%;
+    box-sizing: border-box;
+    margin: 0 -42%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%)
+  }
+  .tip-ins-box .list-ins-li{ padding: 0;  max-height: 720/@w2;  overflow: auto;    overflow-x: hidden;
+    .ins-select-box{ position: relative;margin-left: 30/@w2;
+      &:before{-webkit-transform: rotate(90deg); content: "";
+        transform: rotate(90deg);
+        width: 0;
+        height: 0;
+        border-top: 4/@w2 solid transparent;
+        border-bottom: 4/@w2  solid transparent;
+        border-left: 4/@w2 solid #8e8e93;
+        position: absolute;
+        right: 8/@w2;
+        top: 50%;
+        margin-top: -4/@w2;}
+      select{min-width: 70/@w2;padding-right: 40/@w2; border-radius: 4/@w2;  -webkit-appearance: none;  appearance: none; background: #f5f5f5; background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#fdfdfd), to(#f3f3f3));height: 50/@w2; border:1px solid #e7e7e9;
+      }
+    }
+  }
+
+  .list-ins-li ul{ width: 100%; }
+  .weui_cells_radio .weui_check:checked + .weui_icon_checked:before{ color: #5890ff;font-size: 44/@w2;}
+  .select-list-ins .gap-left .list-ins-li li{
+    margin-left: 0;
+    font-size: 26/@w2;
+    padding-right: 142/@w2;
+    //padding-left:60/@w2;
+  }
+  .iconBlueHook {
+    position: absolute;
+    top: 50%;
+    right: 30/@w2;
+    width: 32/@w2;
+    height: 16/@w2;
+    border-color: #5890ff #5890ff transparent transparent;
+    border-width: 5/@w2;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-top: -16/@w2;
+    display: inline-block;
+    border-style: solid;
+  }
+  .select-list-ins .list-ins-li{
+    .icon-hook {
+        padding: 30/@w2 60/@w2 30/@w2 0px;
+      em {
+        position: absolute;
+        top: 50%;
+        left: 2/@w2;
+        right: auto;
+        width: 40/@w2;
+        height: 40/@w2;
+        background: #fff;
+        border: 3/@w2 solid #c9c9cb;
+        border-radius: 100%;
+        box-sizing: border-box;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        margin-top: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+      em.iconBlueHook {
+        background: #5890ff;
+        border: 3/@w2 solid #5890ff;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 16/@w2;
+          height: 8/@w2;
+          border-color: #fff #fff transparent transparent;
+          border-width: 4/@w2;
+          border-style: solid;
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+          left: 6/@w2;
+          top: 6/@w2;
+        }
+      }
+    }
+  }
+  .fnHide{ display: none;}
+  /*input*/
+  .weui_cells_checkbox .weui_cell_hd{  position: absolute;  right:0;}
+  .inq-franchise{
+    display: inline-block;
+    height: 50/@w2;
+    line-height: 50/@w2;
+    width: 122/@w2;
+    color: #b8b8b8;
+    border:1/@w2 solid #b8b8b8;
+    position: absolute;
+    right: 0;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    .radius(2px);
+    text-align: center;
+  }
+  .inq-isfranchise{
+    color: #5890ff;
+    border-color: #5890ff;
+  }
+  .bg-filter {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: .4;
+    z-index: 125;
+    overflow: hidden;
+  }
+
+}
+.body-height{
+  height: 100%;
+  overflow: hidden;
+}

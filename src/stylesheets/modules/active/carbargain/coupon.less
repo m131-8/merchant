@@ -1,0 +1,48 @@
+/*优惠券*/
+
+@import "../../../base/fn";
+.active-bargain-coupon {
+  width: auto;
+  margin: 40/@w2 30/@w2 0;
+  .weui_cells {
+    .radius(8/@w2);
+    border-bottom: 8/@w2 solid #5890ff;
+  }
+  .bargain-coupon-title .weui_cell_primary p {
+    font-size: 30/@w2;
+  }
+  .bargain-coupon-title .money {
+    font-size: 20/@w2;
+    color: #5890ff;
+    .money {
+      font-size: 56/@w2;
+    }
+    .unit {
+      font-size: 22/@w2;
+    }
+  }
+  .bargain-coupon-value:before {
+    border: none;
+  }
+  .bargain-coupon-value .weui_cell_primary p {
+    font-size: 28/@w2;
+  }
+  .bargain-coupon-value .weui_cell_ft {
+    font-size: 28/@w2;
+    color: #969696;
+  }
+  .bargain-coupon-note:before {
+    width: auto;
+    right: 30/@w2;
+    border-top: 1px dashed #e7e7e9;
+  }
+  .coupon-note p {
+    font-size: 28/@w2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    color: #969696;
+  }
+}
+

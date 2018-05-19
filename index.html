@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <!--<meta content="{{ csrf_token() }}" name="csrf-token">-->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- HTTP 1.0 -->
+  <!--<meta http-equiv="pragma" content="no-cache" />-->
+  <!-- HTTP 1.1 -->
+  <!--<meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, max-age=0">-->
+  <meta content="email=no" name="format-detection">
+  <!-- Prevent caching at the proxy server -->
+  <meta http-equiv="expires" content="0" />
+  <script>
+    (function() {
+      // 活动类旧消息推送重定向,VUE架构之前的hash地址
+      var hashMap = {
+        '#active_setsignup_index': '#/active/setsignup/index', // 集客报名
+        '#active_ownersWelfare_welfare': '#/active/owner_welfare', // 车主福利
+        '#game_login': '#/active/shakegame/index',  // 摇一摇游戏
+        '#active_waresBargain_index': '#/active/waresbargain/index', // 商品砍价首页
+        '#active_waresBargain_friend': '#/active/waresBargain/result', // 商品砍价好友转发
+        '#active_waresBargain_result': '#/active/waresBargain/result', // 商品砍价结果
+        '#active_carBargain_index': '#/active/carbargain/index', // 商品砍价首页
+        '#active_carBargain_result': '#/active/carbargain/result', // 商品砍价好友转发
+        '#active_carBargain_friend': '#/active/carbargain/result', // 商品砍价结果
+        '#local_pay': '#/local/pay', // 预存支付
+        '#noquo': '#/personal/quo/noquo', // 询价成功提醒
+        '#my_pay': '#/personal/quo/pay', // 报价详情
+        '#order': '#/personal/order', // 预存通知
+        '#reservation_details': '#/personal/reservations_detail', // 服务预约通知
+        // 菜单栏
+        '#appointment_index': '#/appointment/index', // 养修预约
+        '#inq_index': '#/inquiries/index', // 车险特惠
+        '#usedcar_index': '#/usedcar/index', // 二手车
+        '#discover_rescue': '#/discover/rescue', // 紧急求援
+        '#discover_violations': '#/discover/violations', // 违章查询
+        '#personal_center': '#/personal/index', // 个人中心
+        '#all_reservations': '#/personal/reservations', // 预约记录
+        '#coupons': '#/personal/coupon/list' // 优惠券
+      }
+      /**
+       * 获取 location.search和location.hash中的值
+       * @returns {{}} 放回search解析后的对象
+       */
+      function getSearch() {
+        var hash = window.location.hash
+        var index = hash.indexOf('?')
+        var o = {}
+        var item
+        var searchs = [window.location.search, index !== -1 ? hash.substr(index) : '']
+        searchs.forEach(function(search) {
+          if (search) {
+            search = search.substr(1).split('&')
+            for (var i = 0, len = search.length; i < len; i++) {
+              item = search[i].split('=')
+              o[item[0]] = item[1]
+            }
+          }
+        })
+        return o
+      }
+      /**
+       * ajax 封装函数
+       * @param  {Object} options ajax 配置选项
+       * @return {void}         无返回值
+       */
+      function ajax(options) {
+        var xhr = null;
+        try {
+          xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        } catch(e) {
+          xhr = new XMLHttpRequest();
+        }
+        xhr.onreadystatechange = function () {
+          var res = {};
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              try {
+                res = JSON.parse(xhr.responseText);
+              } catch(e) {
+                res.code = -1;
+                res.message = '返回结果不是json格式';
+              }
+              options.success && options.success(res);
+            } else {
+              try {
+                res = JSON.parse(xhr.responseText);
+              } catch(e) {
+                res.code = -1;
+                res.message = '返回结果不是json格式';
+              }
+              options.error && options.error(res);
+            }
+          }
+        }
+        xhr.open(options.method, options.url, options.async);
+        xhr.send(null);
+      }
+      /**
+       * 开启运营商模式且未通过子域名访问, 进行重定向
+       * @param{Object} storeConfig  4s店配置
+       * @param{String} hash  经过旧版本hashMap过滤的hash
+       * @param{Number} flag  标志位，2： url 已经是最新的
+       */
+      function redirect(storeConfig, hash, flag) {
+        storeConfig = storeConfig || {}
+        var location = window.location
+        var nowHash = location.hash
+        var search = location.search
+        var nowHashBefore = nowHash.split('?')[0] || '#/store/index' // 页面路径
+        var nowHashAfter = nowHash.split('?')[1] || '' // 页面参数
+
+        // 所有url的search 必须添加键值对_=2,解决微信支付路径注册问题
+        var prefixHref = location.protocol + '//' + (storeConfig.subdomain ? storeConfig.subdomain + '.' : '') + (storeConfig.hostname ? storeConfig.hostname : location.hostname) + location.pathname + '?_=2'
+        // 获取hash
+
+        var hash = formatHash(hashMap)
+        if (!hash) { // 非VUE架构之前的hash地址
+          if (search) {
+            hash = nowHashBefore + search + '&' + nowHashAfter
+          } else {
+            hash = nowHash
+          }
+        }
+        // 需要 reload
+        localStorage.setItem('cache_need_reload', true)
+        location.replace(prefixHref + hash.replace(/_=1&?/g, ''))
+      }
+      /**
+       * 获取hash
+       */
+      function formatHash(hashMap) {
+        var oldHash = Object.keys(hashMap)
+        var nowHash = location.hash
+        var search = location.search
+        var nowHashBefore = nowHash.split('?')[0] || '#/store/index' // 页面路径
+        var nowHashAfter = nowHash.split('?')[1] || '' // 页面参数
+        var hash = ''
+        oldHash.forEach(function(item) {
+          if (nowHashBefore == item) { // Vue 架构之前的hash地址
+            if (nowHashAfter) {
+              if (search) {
+                hash = hashMap[item] + search + '&' + nowHashAfter
+              } else {
+                hash = hashMap[item] + '?' + nowHashAfter
+              }
+            } else {
+              hash = hashMap[item] + search
+            }
+          }
+        })
+        return hash
+       }
+      /**
+       * 入口函数
+       * @return {Void}
+       */
+      function main() {
+        var store_id = getSearch().store_id || localStorage.getItem('cache_store_id'),
+          needReload = !!localStorage.getItem('cache_need_reload'),
+          _ = getSearch()._,
+          noSearch = !!_, // 没有Search
+          isFinal = _=== '2' // 2 表示已经是最终地址
+
+        if (isFinal) {
+          if (needReload) { // 还没刷新过
+            localStorage.removeItem('cache_need_reload')
+            window.location.reload(true)
+            // setTimeout(function() {
+            //   window.location.reload(true)
+            // }, 100)
+          }
+          return
+        }
+        // willa
+        var url = '/api/v1/store_config'
+        if (store_id) {
+          url = url + '?store_id=' + store_id
+        }
+        // 发送请求
+        ajax({
+          url: url,
+          async: false, // 同步请求
+          method: 'GET',
+          success: function (res) {
+            if (res.code === 0) {
+              var storeConfig = res.data.store_config
+              if (!storeConfig) {
+                console.error('接口未返回store_config')
+                return
+              }
+              // 存在store_config
+              if (!storeConfig.access_from_subdomain) { // 非子域名访问
+                if (storeConfig.open_enabled) { // 已开启子域名模式, 重定向到子域名模式
+                  // 如果是当前是在中升环境并且dos环境开启
+                  if (storeConfig.is_from_zs_domain && storeConfig.is_dos_domain_enabled) {
+                    storeConfig.hostname = res.data.env === 'test' ? 'w.test.dos.cheanjia.net' : 'w.dos.cheanjia.com'
+                  }
+                  redirect(storeConfig)
+                } else { // 还未开启子域名模式
+                  redirect()
+                }
+              } else { // 子域名访问
+                // 如果是当前是在中升环境并且dos环境开启
+                if (storeConfig.is_from_zs_domain && storeConfig.is_dos_domain_enabled) {
+                  storeConfig.hostname = res.data.env === 'test' ? 'w.test.dos.cheanjia.net' : 'w.dos.cheanjia.com'
+                  redirect(storeConfig)
+                } else {
+                  redirect()
+                }
+              }
+            } else {
+              console.error('请求异常:', res)
+            }
+          },
+          error: function (res) {
+            console.error('请求错误:', res)
+          }
+        })
+      }
+      main()
+    })()
+  </script>
+  <!--script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script-->
+  <script charset="utf-8" src="https://apis.map.qq.com/api/js?v=2.exp&key=STMBZ-K5HH5-LMKIB-QPNHM-HH74S-YLFNU"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <%=htmlWebpackPlugin.files.webpackManifest%>
+</body>
+
+</html>

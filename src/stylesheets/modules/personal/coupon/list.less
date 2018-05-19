@@ -1,0 +1,167 @@
+/*优惠券*/
+
+@import "../../../base/fn";
+.voucher-sec {
+  padding-bottom: 40/@w2;
+}
+
+.voucher-art {
+  margin-top: 40/@w2;
+}
+
+.voucher-art .hd {
+  border-radius: 8/@w2 8/@w2 0 0;
+  line-height: 66/@w2;
+  padding: 0 30/@w2;
+  color: #fff;
+  background: @blue;
+  font-size: 26/@w2;
+}
+
+.voucher-art .hd div{
+  color: #fff;
+}
+
+.voucher-art.voucher-expire .hd,
+.voucher-art.voucher-used .hd {
+  background: #ccc;
+}
+
+.voucher-base .voucher-style {
+  color: @blue;
+  font-size: 30/@w2;
+}
+
+.voucher-expire .voucher-style,
+.voucher-used .voucher-style {
+  color: #CCC!important;
+  font-size: 30/@w2;
+}
+
+.voucher-expire,.voucher-used {
+  position: relative;
+}
+
+.voucher-expire:after {
+  position: absolute;
+  content: "";
+  right: 100/@w2;
+  bottom: 90/@w2;
+  width: 120/@w2;
+  height: 120/@w2;
+  background-position: 0 -406/@w2;
+  z-index: 300;
+}
+
+.voucher-used:after {
+  position: absolute;
+  content: "";
+  right: 100/@w2;
+  bottom: 90/@w2;
+  width: 120/@w2;
+  height: 120/@w2;
+  background-position: -130/@w2 -406/@w2;
+  z-index: 300;
+}
+
+.voucher-info {
+  border-radius: 0 0 8/@w2 8/@w2;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  height: 100/@w2;
+}
+
+.voucher-time {
+  position: relative;
+  border-top: 1px dashed #e7e7e9;
+  padding: 0 30/@w2;
+  height: 80/@w2;
+  line-height: 80/@w2;
+  z-index: 11;
+  &:before {
+    content: "";
+    width: 18/@w2;
+    height: 36/@w2;
+    border-radius: 100%;
+    background: #eee;
+    left: -4/@w2;
+    top: -10/@w2;
+    position: absolute;
+    z-index: 11;
+  }
+  &:after {
+    content: "";
+    width: 18/@w2;
+    height: 18/@w2;
+    border-radius: 100%;
+    background: #eee;
+    right: -4/@w2;
+    top: -10/@w2;
+    position: absolute;
+    z-index: 11;
+  }
+}
+
+.voucher-time {
+  font-size: 26/@w2;
+  color: #000;
+  opacity: 0.6;
+}
+
+.voucher-sec .voucher-art {
+  padding: 0 30/@w2;
+}
+
+.voucher-link:after {
+  content: ' ';
+  display: inline-block;
+  width: 16/@w2;
+  height: 16/@w2;
+  border-width: 2/@w2;
+  border-style: solid;
+  border-color: #a0a0a0 #a0a0a0 transparent transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 30/@w2;
+  margin-top: -8/@w2;
+  transform-origin: top center;
+}
+
+.voucher-art .bg {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  border-radius: 0 0 8/@w2 8/@w2;
+  overflow: hidden;
+  width: 100%
+}
+
+.icon-prestore {
+  background: url(../../../images/prestore_bg.png) no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 248/@w2;
+  height: 252/@w2;
+  background-size: 100%;
+  z-index: 0;
+}
+
+.data-messages-null {
+  padding: 246/@w2 0;
+  color: #ababab;
+  text-align: center;
+  font-size: @15;
+}
+
+.icon-no-coupon {
+  width: 176/@w2;
+  height: 176/@w2;
+  background-position: 0 -220/@w2;
+  display: block;
+  margin: 0 auto 32/@w2;
+  background-size: 600/@w2 600/@w2;
+}

@@ -1,0 +1,141 @@
+  /*续保报价*/
+
+@import "../../../base/fn";
+.inq-franchise-article{
+
+.btn-bottom {
+  position: relative;
+  z-index: 112;
+  padding-top: 116/@w2;
+}
+.bg-white .weui_cell:before {
+  width: auto;
+  left: 30/@w2;
+  right: 0;
+}
+.btn-bottom .btn-fix {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: box;
+  background-color: #ccc;
+  -webkit-box-align: center;
+  box-align: center;
+}
+
+.icon-triangle-up,
+.icon-triangle-down {
+  width: 0;
+  height: 0;
+  border-top: 12/@w2 solid transparent;
+  border-bottom: 12/@w2 solid transparent;
+  border-left: 12/@w2 solid #e7e7e9;
+  position: absolute;
+  right: 30/@w2;
+  top: 50%;
+  margin-top: -6/@w2;
+}
+
+.icon-triangle-up {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.icon-triangle-down {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.icon-blue-hook {
+  position: absolute;
+  top: 50%;
+  right: 30/@w2;
+  display: inline-block;
+  border-style: solid;
+  width: 32/@w2;
+  height: 16/@w2;
+  border-color: @color @color transparent transparent;
+  border-width: 2/@w2;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  margin-top: -16/@w2;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.g-top {
+  font-size: 26/@w2;
+  line-height: 60/@w2;
+}
+
+.input-size {
+  min-height:30/@w2;
+}
+  .inq-franchise{
+    .weui_cell_primary{
+      padding-left: 50/@w2;
+      padding-right:132/@w2;
+      line-height: 52/@w2;
+      p{
+        line-height: 44/@w2;
+      }
+    }
+  .icon-blue-hook {
+      position: absolute;
+      top: 50%;
+      left: 32/@w2;
+      right: auto;
+      width: 40/@w2;
+      height: 40/@w2;
+      border-radius: 100%;
+      box-sizing: border-box;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      margin-top: 0;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #5890ff;
+      border: 3/@w2 solid #5890ff;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 16/@w2;
+        height: 8/@w2;
+        border-color: #fff #fff transparent transparent;
+        border-width: 4/@w2;
+        border-style: solid;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+        left: 6/@w2;
+        top: 6/@w2;
+      }
+    }
+    .inq-franchise{
+    display: inline-block;
+    height: 50/@w2;
+    line-height: 50/@w2;
+    width: 122/@w2;
+    color: #b8b8b8;
+    border:1/@w2 solid #b8b8b8;
+    position: absolute;
+    right: 30/@w2;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    .radius(2px);
+    text-align: center;
+  }
+  .inq-isfranchise{
+    color: #5890ff;
+    border-color: #5890ff;
+  }
+  }
+
+}

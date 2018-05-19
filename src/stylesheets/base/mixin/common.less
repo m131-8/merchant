@@ -1,0 +1,38 @@
+/**
+ * 设置边框幅度
+ * 2/@w = 2/37.5rem = 0.053333rem
+ */
+.radius(@radius:2/@w) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+}
+
+.color {
+    color: @color
+}
+.config .weui_label,
+.datetime .weui_cell_bd p,
+.address-before .weui_cell_bd p,
+.time-picker .weui_cell_bd p{ width: 180/@w2 !important;display: inline-block;padding-right:10/@w2;}
+/* 底部按钮通用样式 */
+.bottom-btn{position: fixed;left: 0;bottom: 0;color: #fff; background-color: #3B5999;border-radius: 0; font-size: 30/@w2;height: 96/@w2;}
+
+/* title条 共用样式*/
+.title-bar{
+  font-size: 26/@w2;
+  line-height: 60/@w2;
+  padding-top: 30/@w2;
+  color: #000;
+  opacity: 0.7;
+  text-indent: 30/@w2;
+}
+/* 分享框背景设透明*/
+.share-box {
+  .weui_dialog {
+    background: transparent;
+    top: 25%;
+  }
+}

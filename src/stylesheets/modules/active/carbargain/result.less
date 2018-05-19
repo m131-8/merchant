@@ -1,0 +1,313 @@
+@import '../../../base/fn';
+.kj-bg3 {
+  position: relative;
+  width: 100%;
+  background: url(../../../images/car-bargain/car-kanjia4.jpg) no-repeat top center #75b9ff;
+  background-size: 100% auto;
+  height: auto;
+  .forward-time {
+    height: 88/@w2;
+    line-height: 88/@w2;
+    background: #1b1b1b;
+    padding-top: 0;
+    text-align: left;
+    padding-left: 30/@w2;
+    color: #fff;
+    .day {
+      background-color: #373b3e;
+      color: #ffc21c;
+      text-align: center;
+      height: 60/@w2;
+      line-height: 60/@w2;
+      display: inline-block;
+      padding: 0 15/@w2;
+      margin: 0 15/@w2;
+      .radius();
+    }
+  }
+  .forward-user {
+    padding: 58/@w2 0 0 40/@w2;
+    img.forward-user-pic {
+      width: 100/@w2;
+      height: 100/@w2;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 7px rgba(255, 230, 65, 0.6);
+      margin-right: 22/@w2;
+    }
+    span {
+      width: 438/@w2;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      .radius(8/@w2);
+      padding: 30/@w2;
+      line-height: 1.5;
+      position: relative;
+    }
+    span:before {
+      -webkit-transform: rotate(180deg);
+      content: "";
+      transform: rotate(180deg);
+      width: 0;
+      height: 0;
+      border-top: 18/@w2 solid transparent;
+      border-bottom: 18/@w2 solid transparent;
+      border-left: 18/@w2 solid #fff;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      margin-top: -16/@w2;
+      opacity: 0.7;
+    }
+  }
+  .villain-pic {
+    position: absolute;
+    width: 205/@w2;
+    height: 205/@w2;
+    top: 223/@w2;
+    right: 10/@w2;
+  }
+  .forward-car {
+    width: 411/@w2;
+    height: 417/@w2;
+    background: url(../../../images/car-bargain/forward-car.png) no-repeat;
+    background-size: 411/@w2 auto;
+    margin: 0 auto;
+    margin-top: 170/@w2;
+    img {
+      width: 296/@w2;
+      height: 296/@w2;
+      margin: 47/@w2 0 0 44/@w2;
+    }
+  }
+  .forward-btn {
+    p:nth-child(1) {
+      text-align: center;
+      position: relative;
+      line-height: 106/@w2;
+      margin-bottom: -20/@w2;
+      img {
+        vertical-align: middle;
+        width: 116/@w2;
+        position: absolute;
+        left: 100/@w2;
+        bottom: -2/@w2;
+      }
+      span {
+        vertical-align: middle;
+        font-size: @15;
+        color: #000;
+        font-weight: 700;
+        text-shadow: 0 0 2px #fff;
+        em {
+          font-size: 60/@w2;
+          color: #de1f48;
+          text-shadow: 0 0 2px #fff;
+          font-weight: 700;
+        }
+      }
+    }
+    .dis-p {
+      text-align: center;
+      .carkj-btn-s {
+        width: 338/@w2;
+        height: 105/@w2;
+        display: inline-block;
+        background: url(../../../images/car-bargain/carkj-btn-s.png) no-repeat;
+        background-size: 338/@w2 auto;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        span {
+          line-height: 80/@w2;
+          font-size: @15;
+          color: #3a3a3a;
+          margin-left: 10/@w2;
+          text-shadow: -1px -1px 0px #fce6b4;
+          font-weight: bold;
+          overflow: hidden;
+          display: inline-block;
+          margin-top: -15/@w2;
+        }
+      }
+      .carkj-btn-blue {
+        background: url(../../../images/car-bargain/carkj-btn-blue.png) no-repeat;
+        background-size: 338/@w2 auto;
+        span {
+          color: #fff;
+          text-shadow: -1px -1px 0px #4783f9;
+        }
+      }
+      .carkj-btn-b {
+        width: 571/@w2;
+        background: url(../../../images/car-bargain/carkj-btn-b.png) no-repeat;
+        background-size: 571/@w2 auto;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  .car-kj-info {
+    margin-top: 25/@w2;
+    p {
+      text-align: center;
+      color: #3a3a3a;
+      em {
+        color: #de1f48;
+      }
+    }
+  }
+  .forward-bottom {
+    width: 100%;
+    padding-bottom: 100/@w2;
+    min-height: 341/@w2;
+    background: url(../../../images/car-bargain/car-kanjia-b.png) no-repeat bottom #75b9ff;
+    background-size: 100% auto;
+    .forward-rules {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 1px 1px 10px #377aff;
+      overflow: hidden;
+      margin: 50/@w2 30/@w2;
+      h4 {
+        color: #568dfc;
+        line-height: 70/@w2;
+        text-align: center;
+        margin: 0 30/@w2;
+        border-bottom: 1px dashed #77a4fe;
+      }
+    }
+    .forward-list {
+      // background: none;
+      // padding-top: 20/@w2;
+      li {
+        overflow: hidden;
+        border-bottom: 1px solid #cbc5c3;
+        margin: 0 30/@w2;
+        padding: 30/@w2 0;
+        &:last-child {
+          border-bottom: 0;
+        }
+        .fl {
+          float: left;
+        }
+        .fr {
+          float: right;
+        }
+        .bargain-mes-fr {
+          span {
+            display: block;
+            float: left;
+            font-size: 24/@w2;
+            line-height: 60/@w2;
+            height: 60/@w2;
+            img {
+              width: 60/@w2;
+              height: 60/@w2;
+              overflow: hidden;
+              display: block;
+            }
+            em {
+              padding-left: 20/@w2;
+            }
+          }
+        }
+      }
+      p {
+        line-height: 100/@w2;
+        text-align: center;
+      }
+      .bargain-mes-cash {
+        line-height: 60/@w2;
+        em {
+          i {
+            color: #de1f48;
+          }
+        }
+      }
+    }
+    .no-friend{
+      text-align: center;
+    }
+  }
+}
+
+.car-kanjia-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 310/@w2;
+  background: url(../../../images/car-bargain/car-kanjia-popup.png) no-repeat;
+  background-size: 100% auto;
+  z-index: 2000;
+  padding-top: 650/@w2;
+  p {
+    text-align: center;
+    b {
+      color: #fd3702;
+      font-size: 60/@w2;
+      font-weight: bold;
+    }
+    .carkj-btn-ss {
+      width: 264/@w2;
+      height: 81/@w2;
+      line-height: 81/@w2;
+      display: inline-block;
+      background: url(../../../images/car-bargain/kanjia-popup-btn.png) no-repeat;
+      background-size: 264/@w2 auto;
+      margin: 0 15/@w2;
+      font-size: @15;
+      font-weight: bold;
+      color: #3a3a3a;
+    }
+  }
+  p:nth-child(2) {
+    line-height: 100/@w2;
+  }
+  p:nth-last-child(1) {
+    padding-top: 20/@w2;
+  }
+  .kanjia-popup-close {
+    position: absolute;
+    width: 50/@w2;
+    height: 50/@w2;
+    display: inline-block;
+    right: 70/@w2;
+    top: 540/@w2;
+  }
+}
+.exchange-car {
+  .exchange-info {
+    padding: 0 30/@w2;
+    border-bottom: 1px solid #e7e7e9;
+    h4 {
+      margin: 30/@w2;
+    }
+    .weui_cell {
+      background-color: #e7e7e9;
+      margin-bottom: 5/@w2;
+      &:before {
+        border-top: none;
+      }
+    }
+  }
+  .exchange-btn {
+    padding: 8/@w2 30/@w2;
+    .weui_btn {
+      background-color: #3b5999;
+    }
+  }
+}
+
+.forward-time-day .day {
+  background-color: #373b3e;
+  color: #ffc21c;
+  text-align: center;
+  display: inline-block;
+  padding: 0 3/@w2;
+  border-radius: 3/@w2;
+}
+
+
+

@@ -1,0 +1,265 @@
+@import '../../../base/fn';
+
+.trans-rotate {
+  transform: rotate(0,0,1, -10deg);
+  -webkit-transform: rotate(0,0,1, -10deg);
+}
+
+.trans-skew {
+  transform: skewY(-10deg);
+  -webkit-transform: skewY(-10deg);
+}
+
+.bargain-wrap {
+  width: 100%;
+  height: 1406/@w2;
+  background: url(../../../images/wares-bargain/bargain1.jpg) no-repeat top center #ccc5bf;
+  background-size: 100% auto;
+  position: relative;
+  overflow: hidden;
+  // .forward-time {
+  //   height: 88/@w2;
+  //   line-height: 88/@w2;
+  //   padding-top: 0;
+  //   text-align: center;
+  //   padding-left: 30/@w2;
+  //   color: #fff;
+  // }
+  .countdown {
+    text-align: center;
+    color: #fff;
+    padding-top: 25/@w2;
+    line-height: 40/@w2;
+    .day {
+      width: 40/@w2;
+      height: 40/@w2;
+      line-height: 40/@w2;
+      text-align: center;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.3);
+      .radius(8/@w2);
+      vertical-align: middle;
+      margin: -2px 10/@w2 0 10/@w2;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+  }
+  .bargain-info {
+    position: absolute;
+    top: 90/@w2;
+    width: 69.2%;
+    right: 20/@w2;
+    z-index: 100;
+  }
+  .bargain-user {
+    position: absolute;
+    top: 120/@w2;
+    left: 0;
+    span {
+      background: #5890ff;
+      display: block;
+      height: 40/@w2;
+      line-height: 40/@w2;
+      color: #fff;
+      width: 200/@w2;
+      border-radius: 10/@w2;
+      transform: rotate(0, 0, 1, -10deg);
+      transform: skewY(-10deg);
+      text-align: center;
+      margin-left: -12/@w2;
+      outline: 1px solid transparent;
+    }
+    .bargain-user-pic {
+      width: 100/@w2;
+      height: 100/@w2;
+      display: block;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin:0 0 15/@w2 50/@w2;
+      box-shadow:0 0 5px #5890ff;
+    }
+  }
+  .bargain-banner {
+    margin: 0 auto;
+    margin-top: 270/@w2;
+    width: 560/@w2;
+    background: url(../../../images/wares-bargain/bargain-banner.png) no-repeat;
+    height: 548/@w2;
+    background-size: 100% auto;
+    position: relative;
+    img {
+      display: block;
+      width: 480/@w2;
+      height: 480/@w2;
+      overflow: hidden;
+      border: 10/@w2 solid #5890ff;
+      left: 34/@w2;
+      top: 24/@w2;
+      position: absolute;
+    }
+  }
+  .bargain-btn {
+    transform: rotate(0, 0, 1, -10deg);
+    transform: skewY(-10deg);
+    text-align: center;
+    font-size: 0;
+    padding-top: 40/@w2;
+    span {
+      display: inline-block;
+      height: 70/@w2;
+      line-height: 70/@w2;
+      padding: 0 30/@w2;
+      color: #fff;
+      font-size: 30/@w2;
+      border-radius: 10/@w2;
+      margin: 0 10/@w2;
+      outline: 1px solid transparent;
+    }
+    .blue-btn {
+      background-color: #5890ff;
+    }
+    .red-btn {
+      background-color: #fb3f3f;
+    }
+  }
+  .bargain-mes {
+    width: 92%;
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    margin-top: -100/@w2;
+    .bargain-mes-t {
+      margin-top: -70/@w2;
+      width: 100%;
+      height: 122/@w2;
+      background: url(../../../images/wares-bargain/bargain-mes-t.png) no-repeat;
+      background-size: 690/@w2 auto;
+    } 
+    .bargain-mes-list {
+      background: rgba(149, 140, 141, 0.6);
+      overflow: hidden;
+      width: 100%;
+      padding: 10/@w2 0;
+      p {
+        line-height: 1.4;
+        padding: 0/@w2 30/@w2 10/@w2 30/@w2;
+        em {
+          width: 12/@w2;
+          height: 12/@w2;
+          background: #fff;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 10/@w2;
+        }
+      }
+    }
+    .rotate-span {
+      background: #5890ff;
+      height: 40/@w2;
+      line-height: 40/@w2;
+      position: absolute;
+      right: -40/@w2;
+      top: 40/@w2;
+      color: #fff;
+      width: 200/@w2;
+      text-align: center;
+      outline: 1px solid transparent;
+      transform: rotate(0, 0, 1, -10deg);
+      transform: skewY(-10deg);
+      border-radius: 10/@w2;
+    }
+  }
+  .mt120 {
+    margin-top: 120/@w2;
+  }
+}
+
+.bargain-ewm {
+  width: 100%;
+  height: 1207/@w2;
+  background: url(../../../images/wares-bargain/bargain2.jpg) no-repeat top center #ccc5bf;
+  background-size: 100% auto;
+  position: relative;
+  overflow: hidden;
+  .bargain-info {
+    position: absolute;
+    top: 70/@w2;
+    width: 69.2%;
+    right: 20/@w2;
+    z-index: 100;
+  }
+  .bargain-mes {
+    width: 92%;
+    margin: 0 auto;
+    color: #fff;
+    position: relative;
+    margin-top: 290/@w2;
+    .rotate-span {
+      background: #5890ff;
+      height: 40/@w2;
+      line-height: 40/@w2;
+      position: absolute;
+      right: -40/@w2;
+      top: 40/@w2;
+      color: #fff;
+      width: 200/@w2;
+      text-align: center;
+      outline: 1px solid transparent;
+      .radius(10/@w2);
+      .trans-rotate;
+      .trans-skew;
+    }
+    .bargain-mes-t {
+      margin-top: -70/@w2;
+      width: 100%;
+      height: 122/@w2;
+      background: url(../../../images/wares-bargain/bargain-mes-t.png) no-repeat;
+      background-size: 690/@w2 auto;
+    }
+    .bargain-mes-list {
+      background: rgba(149, 140, 141, 0.6);
+      overflow: hidden;
+      width: 100%;
+      padding: 10/@w2 0;
+      p {
+        line-height: 1.4;
+        padding: 0/@w2 30/@w2 10/@w2 30/@w2;
+        em {
+          width: 12/@w2;
+          height: 12/@w2;
+          background: #fff;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 10/@w2;
+        }
+      }
+      .bargain-rules {
+        padding: 30/@w2;
+        overflow: hidden;
+        .carkj-rules-l {
+          width: 368/@w2;
+          font-size: @15;
+          h4 {
+            border-bottom: 1px solid #fff;
+            display: inline-block;
+            line-height: 2;
+            margin-bottom: 10/@w2;
+          }
+          p {
+            line-height: 1.5;
+          }
+        }
+        .carkj-rules-r {
+          img {
+            width: 160/@w2;
+            height: 160/@w2;
+            display: inline-block;
+          }
+        }
+        p {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

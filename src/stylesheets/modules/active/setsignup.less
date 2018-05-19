@@ -1,0 +1,245 @@
+@import '../../base/fn';
+.set-reg {
+  .page-next {
+    width: 56/@w2;
+    height: 55/@w2;
+    background: url(../../images/page-next.png) no-repeat;
+    background-size: 56/@w2 55/@w2;
+    position: absolute;
+    bottom: 20/@w2;
+    left: 50%;
+    margin-left: -28/@w2;
+    animation: pagenext 1s linear infinite;
+    -webkit-animation: pagenext 1s linear infinite;
+  }
+  @keyframes pagenext {
+    0% {
+      bottom: 20/@w2;
+    }
+    50% {
+      bottom: 40/@w2;
+    }
+    100% {
+      bottom: 20/@w2;
+    }
+  }
+  .set-reg-mes {
+    width: 100%;
+    background: url(../../images/set-reg2.png) top no-repeat #5890ff;
+    background-size: 100% auto;
+    padding-top: 200/@w2;
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 120/@w2;
+    .vux-popup-dialog {
+      background: #fff;
+      padding-top: 10/@w2;
+    }
+    .sign-up {
+      transform: skewY(-10deg);
+      background: #fb3f3f;
+      padding: 0 30/@w2;
+      height: 46/@w2;
+      line-height: 46/@w2;
+      display: inline-block;
+      color: #fff;
+      border-radius: 4/@w2 0 0 4/@w2;
+      position: absolute;
+      top: 150/@w2;
+      right: -10/@w2;
+    }
+    .reg-activity {
+      padding: 30/@w2;
+      overflow: hidden;
+      .activity-title {
+        background: #fff;
+        width: 100%;
+        overflow: hidden;
+        img {
+          width: 126/@w2;
+          height: 126/@w2;
+          vertical-align: middle;
+          float: left;
+          border: 1px solid #e7e7e9;
+        }
+        .activity-title-t {
+          padding: 30/@w2 30/@w2 30/@w2 0;
+          margin-left: 30/@w2;
+          border-bottom: 1px solid #e7e7e9;
+          span {
+            padding-left: 30/@w2;
+          }
+        }
+        .activity-title-c {
+          padding: 30/@w2 30/@w2 30/@w2 0;
+          margin-left: 30/@w2;
+          p {
+            line-height: 40/@w2;
+          }
+        }
+        .activity-title-b {
+          border-top: 1px solid #e7e7e9;
+          a,
+          span {
+            flex: 1;
+            text-align: center;
+            line-height: 108/@w2;
+            color: #000;
+            border-left: 1px solid #e7e7e9;
+          }
+          i {
+            width: 60/@w2;
+            height: 60/@w2;
+            display: inline-block;
+            background: url(../../images/zs-2-icon.png) no-repeat;
+            background-size: 400/@w2 400/@w2;
+            vertical-align: middle;
+            margin-top: -3px;
+          }
+          .icon-yjxl {
+            background-position: -208/@w2 -334/@w2;
+          }
+          .address-a {
+            background-position: -320/@w2 0;
+          }
+          .icon-phone {
+            background-position: -320/@w2 -338/@w2;
+          }
+        }
+        .activity-t {
+          display: inline-block;
+          height: 126/@w2;
+          line-height: 126/@w2;
+        }
+      }
+      .activity-introduce {
+        background: #fff;
+        margin-top: 20/@w2;
+        padding: 23/@w2 30/@w2;
+        .weui_panel {
+          &:before {
+            border-top: none;
+          }
+          &:after {
+            border-bottom: none;
+          }
+        }
+        .activity-introduce-text {
+          p {
+            line-height: 1.4;
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+      .activity-sign-up {
+        display: block;
+        right: 0;
+        position: fixed;
+        line-height: 96/@w2;
+        padding: 0 30/@w2;
+        height: 96/@w2;
+        bottom: 0;
+        left: 0;
+        margin-top: 100/@w2;
+        background: #fff;
+        .need-registered {
+          position: absolute;
+          right: 30/@w2;
+          top: 8/@w2;
+          width: 210/@w2;
+          height: 80/@w2;
+          line-height: 80/@w2;
+          text-align: center;
+          color: #fff;
+          font-size: 30/@w2;
+        }
+        .active {
+          background-color: #DDDDDD;
+        }
+        .already-registered {
+          text-align: center;
+          line-height: 96/@w2;
+          font-size: 30/@w2;
+          .icon-ok {
+            width: 48/@w2;
+            height: 48/@w2;
+            background: url(../../images/zs-2-icon.png) no-repeat;
+            background-size: 400/@w2 400/@w2;
+            background-position: -40/@w2 -330/@w2;
+            display: inline-block;
+            vertical-align: middle;
+            margin: -2px 10/@w2 0 0;
+          }
+        }
+      }
+      .activity-sign-msg {
+        .buy-disabled {
+          .weui_input {
+            opacity: 1;
+          }
+        }
+        .ensure {
+          margin: 0 30/@w2 15/@w2;
+          background: #5890ff;
+          color: #fff;
+          padding: 15/@w2 30/@w2;
+          position: relative;
+          &:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 0;
+            margin-top: -8/@w2;
+            border-left: 8/@w2 solid transparent;
+            border-right: 8/@w2 solid transparent;
+            border-bottom: 10/@w2 solid #5890ff;
+          }
+        }
+        .activity-sign-pay {
+          background: #fff;
+          // width: 100%;
+          overflow: hidden;
+          border-top: 1px solid #d9d9d9;
+          span {
+            line-height: 96/@w2;
+            padding-left: 30/@w2;
+            font-size: 30/@w2;
+            color: #fb3f3f;
+          }
+          .btn-pay {
+            float: right;
+            width: 320/@w2;
+            height: 80/@w2;
+            line-height: 80/@w2;
+            text-align: center;
+            color: #fff;
+            font-size: @15;
+            background: #3b5999;
+            .radius(4/@w);
+            margin-top: 8/@w2;
+            margin-right: 30/@w2;
+            margin-bottom: 8/@w2;
+          }
+          .btnclass.btn-pay {
+            height: 80/@w2;
+            width: 92%;
+            line-height: 80/@w2;
+            text-align: center;
+            color: #fff;
+            font-size: @15;
+            background: #3b5999;
+            .radius(4/@w);
+            margin-top: 8/@w2;
+            margin-bottom: 8/@w2;
+          }
+        }
+      }
+    }
+  }
+}
+

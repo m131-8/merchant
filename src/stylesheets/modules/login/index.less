@@ -1,0 +1,59 @@
+@import '../../base/fn';
+.login-page {
+  position: relative;
+  background: #fff;
+  margin-top: 20/@w2;
+  .icon-iphone {
+    position: absolute;
+    top: 27/@w2;
+    left: 45/@w2;
+    width: 32/@w2;
+    height: 52/@w2;
+    background: url(../../images/icon.png) no-repeat;
+    background-position: -144/@w2 -152/@w2;
+    background-size: 600/@w2 600/@w2;
+  }
+  .icon-message {
+    position: absolute;
+    top: 142/@w2;
+    left: 37/@w2;
+    width: 50/@w2;
+    height: 36/@w2;
+    background: url(../../images/icon.png) no-repeat;
+    background-position: -240/@w2 -152/@w2;
+    background-size: 600/@w2 600/@w2;
+  }
+  .mobile-code .weui_input,
+  .message-code .weui_input {
+    font-size: 30/@w2;
+    text-indent: 90/@w2;
+  }
+  .message-code {
+    &:before {
+      content: ' ';
+      position: absolute;
+      width: auto;
+      border-top: 1px solid #d9d9d9;
+      left: 30/@w2;
+      top: 0;
+      right: 0;
+    }
+  }
+  .verifyCode {
+    position: absolute;
+    top: 130/@w2;
+  }
+  .login-btn {
+    position: absolute;
+    top: 255/@w2;
+    width: 88%;
+    left: 50%;
+    margin-left: -44%;
+    line-height: 3.2;
+    font-size: 30/@w2;
+    background-color: @blue;
+    color: #fff;
+    .radius();
+  }
+}
+

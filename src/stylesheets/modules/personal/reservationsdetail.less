@@ -1,0 +1,81 @@
+/*全部预约*/
+
+@import "../../base/fn";
+.reservations-details-service {
+  line-height: 1.2;
+  .adviser-img {
+    display: block;
+    width: 96/@w2;
+    height: 96/@w2;
+    border-radius: 50%;
+  }
+  .service_mobile {
+    display: table-cell;
+    vertical-align: middle;
+    width: 60/@w2;
+    padding-right: 60/@w2;
+    position: relative;
+    em.icon-phone {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -30/@w2;
+      width: 60/@w2;
+      height: 60/@w2;
+      background: url(../../images/zs-2-icon.png) no-repeat center center;
+      background-position: -320/@w2 -338/@w2;
+      background-size: 400/@w2 400/@w2;
+    }
+  }
+}
+
+.reservations-details-status {
+  .weui_cell_ft {
+    color: #000;
+  }
+  .reservations-details-id span{
+    margin-left: 17.3/@w2;
+  }
+}
+
+.reservations-details-time {
+  .weui_cell_primary p {
+    font-size: 28/@w2;
+    color: #737373;
+    line-height: 1.5;
+  }
+  .change-time {
+    padding: 0;
+    line-height: 1.7;
+    .weui_cell_bd p {
+      font-size: 28/@w2;
+      color: #5890ff;
+    }
+    .vux-datetime-value {
+      display: none;
+    }
+  }
+}
+
+.reservations-details-info:before {
+  border-top: none;
+}
+
+.reservations-details-info {
+  .weui_cell_primary p {
+    font-size: 28/@w2;
+    color: #737373;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2;
+    span {
+      width: 140/@w2;
+      text-align: right;
+      display: inline-block;
+    }
+  }
+}
+
+

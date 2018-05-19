@@ -1,0 +1,78 @@
+/**
+ * 预存保单费
+ */
+@import "../../base/fn";
+.radius(@radius:4/@w2) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+}
+.tip-result{
+    background: #fff;
+    padding: 40/@w2 0 60/@w2;
+    text-align: center;
+    .result-ico{
+      display: block;
+      margin:36/@w2 auto 44/@w2;
+    }
+    .result-hd{
+        color: #000;
+        font-size: 30/@w2;
+    }
+    .result-price{
+      font-size: 72/@w2;
+      color: #3b5999;
+      margin-top: 26/@w2;
+      .fs24{
+        font-size: 48/@w2;
+      }
+    }
+}
+.title-bar{
+  font-size: 26/@w2;
+  line-height: 60/@w2;
+  padding-top: 30/@w2;
+  color: #000;
+  opacity: 0.7;
+  text-indent: 30/@w2;
+}
+.in-text{
+  font-size: 30/@w2;
+}
+.bg-filter {position: fixed;height: 100%;width: 100%;left: 0;top: 0;bottom: 0;background: #000;opacity: 0.4;z-index:125;overflow: hidden;}
+.tip-login .tip-filter-box{
+  z-index: 126;
+  border-radius: 16/@w2;
+  background: #fff;
+  padding: 16/@w2 0 16/@w2 0;
+  position: fixed;
+  width: 84%;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  margin: 0 -42%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+
+  padding: 20/@w2;
+  .title{text-align: center; font-size:30/@w2;margin:74/@w2 0 84/@w2;} }
+.btn-confirm{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-align: center;
+  box-align: center;
+  margin-left: -10/@w2;
+
+  .btn{-webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;margin-left: 10/@w2;
+  width: 50%;
+  display: block; box-sizing: border-box; .radius(8/@w2);}
+  .btn-cancel{background: #fff; border:1px solid #3b5999; color: #3b5999;}
+}

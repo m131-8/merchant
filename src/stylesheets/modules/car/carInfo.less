@@ -1,0 +1,117 @@
+/*车品牌*/
+
+@import "../../base/fn";
+.title-bar h2 {
+  padding-bottom: 10/@w2;
+  color: #000;
+  opacity: 0.7;
+  font-size: 26/@w2;
+}
+.word-list{
+  margin: 0 15/@w2;
+}
+.is-hot {
+  background: url(../../images/ico_hot.png) no-repeat;
+  background-size: 100%;
+  span {
+    opacity: 0;
+  }
+}
+
+.isAll {
+  background-position: 0 -60/@w2;
+}
+
+.name-item {
+  width: 60/@w2;
+  height: 60/@w2;
+  line-height: 60/@w2;
+  margin: 0 13/@w2 30/@w2 13/@w2;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30/@w2;
+  border: 1px solid #e7e7e9;
+  background-color: #fff;
+}
+
+.name-item-selected {
+  background-color: #5890FE;
+  color: #fff;
+}
+
+.car-list {
+  zoom: 1;
+  padding: 0 12/@w2;
+  /*margin-right: 10px;*/
+}
+
+.car-list:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+  content: '.';
+}
+
+.car-list li {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 4/@w2;
+  margin-bottom: 20/@w2;
+}
+
+.car-list01 li {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.car-list a {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #e7e7e9;
+  padding: 0 10/@w2;
+  color: #000;
+  font-size: 28/@w2;
+  height: 88/@w2;
+  display: -webkit-box;
+  display: box;
+  box-align: center;
+  -webkit-box-align: center;
+}
+
+.car-list a img {
+  display: block;
+  margin-right: 10/@w2;
+}
+
+.car-list li.on a {
+  border-color: #ce3b28;
+  color: #ce3b28;
+}
+
+.title_lab {
+  position: relative;
+  display: block;
+  margin: 40/@w2 26/@w2;
+}
+
+.title_lab:before {
+  position: absolute;
+  top: 50%;
+  border-top: 1px solid #999;
+  width: 100%;
+  display: block;
+  content: "";
+  margin-top: -1px;
+  z-index: 2;
+}
+
+.title_lab label {
+  position: relative;
+  display: inline-block;
+  padding-right: 35/@w2;
+  background: #eee;
+  z-index: 111;
+}
+

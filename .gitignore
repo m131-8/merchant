@@ -1,0 +1,13 @@
+.idea/
+.tmp/
+.DS_Store
+app/modules/.rest.js
+app/modules/.route.js
+node_modules/
+node_modules_bak/
+build_bak/
+npm-debug.log
+selenium-debug.log
+yarn.lock
+src/rest_bak.js
+src/route_bak.js

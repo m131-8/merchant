@@ -1,0 +1,58 @@
+pipeline:
+  build:
+    image: nginx:1.10.1-alpine
+    commands:
+      - echo "build started"
+
+  docker:
+    image: plugins/docker
+    mirror: https://55xptcyn.mirror.aliyuncs.com
+    registry: registry.cheanjia.net
+    repo: registry.cheanjia.net/master/zswechat-frontend
+    tag: ${DRONE_COMMIT:0:7}
+    when:
+      branch: master
+
+  docker:
+    image: plugins/docker
+    mirror: https://55xptcyn.mirror.aliyuncs.com
+    registry: registry.cheanjia.net
+    repo: registry.cheanjia.net/develop/zswechat-frontend
+    tag: ${DRONE_COMMIT:0:7}
+    when:
+      branch:
+        exclude: master
+
+  slack:
+    image: plugins/slack
+    channel: ci
+    template: |
+      {{uppercasefirst build.status}}: build #{{ build.number }} of <https://github.com/{{ repo.owner }}/{{ repo.name }}|{{ repo.owner }}/{{ repo.name }}> <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 7 }}> ({{ build.branch }}) by {{ build.author }} (<{{ build.link }}|Open>)
+    when:
+      status: [success, failure]
+
+  slack:
+    image: plugins/slack
+    channel: dev
+    template: |
+      {{uppercasefirst build.status}}: build #{{ build.number }} of <https://github.com/{{ repo.owner }}/{{ repo.name }}|{{ repo.owner }}/{{ repo.name }}> <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 7 }}> ({{ build.branch }}) by {{ build.author }} (<{{ build.link }}|Open>)
+    when:
+      branch: master
+      status: changed
+
+  slack:
+    image: plugins/slack
+    channel: ci
+    template: |
+      Docker image registry.cheanjia.net/master/zswechat-frontend:${DRONE_COMMIT:0:7} built from <https://github.com/{{ repo.owner }}/{{ repo.name }}|{{ repo.owner }}/{{ repo.name }}> <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 7 }}> ({{ build.branch }}) by {{ build.author }}
+    when:
+      branch: master
+
+  slack:
+    image: plugins/slack
+    channel: ci
+    template: |
+      Docker image registry.cheanjia.net/develop/zswechat-frontend:${DRONE_COMMIT:0:7} built from <https://github.com/{{ repo.owner }}/{{ repo.name }}|{{ repo.owner }}/{{ repo.name }}> <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 7 }}> ({{ build.branch }}) by {{ build.author }}
+    when:
+      branch:
+        exclude: master
